@@ -12,7 +12,13 @@ def sum_bits(a, b):
     else:
         return 1 
 
-s = sum_bits(a, b)
 
-c = NOT_gate(s)
+def half_adder(a, b):
+    s = sum_bits(a, b)
+    c = AND_gate(a, b)
+    return (s, c)
+
+print(half_adder(1, 0))
+
+
 
