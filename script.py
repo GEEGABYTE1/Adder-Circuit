@@ -18,7 +18,17 @@ def half_adder(a, b):
     c = AND_gate(a, b)
     return (s, c)
 
-print(half_adder(1, 0))
+def full_adder(a, b, c):
+    partial_sum = half_adder(a, b)[0]
+    new_s = half_adder(partial_sum, c)[0]
 
+    b_c = half_adder(b, c)[0]
+    new_c = new_s
+    if a == b and b == c and a == c:
+        pass 
+    else:
+        new_c = NOT_gate(new_s)
+    print("s: {}, c:{}".format(new_s, new_c))
 
+print(full_adder(1, 1, 1))
 
