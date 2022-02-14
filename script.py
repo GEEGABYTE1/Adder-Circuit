@@ -28,7 +28,18 @@ def full_adder(a, b, c):
         pass 
     else:
         new_c = NOT_gate(new_s)
-    print("s: {}, c:{}".format(new_s, new_c))
+    return (new_s, new_c)
+    #print("s: {}, c:{}".format(new_s, new_c))
 
-print(full_adder(1, 1, 1))
 
+def ALU(a, b, c, opcode):
+    if opcode == 0:
+        s = half_adder(a, b)[0]
+        c = half_adder(a, b)[-1]
+    elif opcode == 1:
+        s = full_adder(a, b, c)[0]
+        c = full_adder(a, b, c)[-1]
+    return s, c
+
+
+print(ALU(1, 1, 1, 0))
