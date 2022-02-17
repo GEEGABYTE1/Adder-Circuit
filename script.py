@@ -58,4 +58,4 @@ def ALU(a, b, c, opcode, add, subtract):
 
 
 
-print(ALU(1, 1, 1, 3, 0 ,0))
+#print(ALU(1, 1, 1, 3, 0 ,0))
